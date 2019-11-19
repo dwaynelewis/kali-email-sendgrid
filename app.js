@@ -27,7 +27,7 @@ app.get("/", (request, response) =>
 
 // SEND EMAIL WITH CONTACT FORM DATA
 var SAMPLE_TO_EMAIL = "hello@kali.digital";
-var SAMPLE_FROM_EMAIL = "someone@example.org";
+var SAMPLE_FROM_EMAIL = "no-reply@kali.digital";
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -49,7 +49,6 @@ app.post("/api/send", (req, res) => {
   if (postBody.email) {
     msgTxt += "Email: " + postBody.email + "\n";
     msgHtml += "<strong>Email</strong>: " + postBody.email + "<br/><br/>";
-    SAMPLE_FROM_EMAIL = postBody.email;
   }
 
   if (postBody.phone) {
