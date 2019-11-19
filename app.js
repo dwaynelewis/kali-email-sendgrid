@@ -49,6 +49,7 @@ app.post("/api/send", (req, res) => {
   if (postBody.email) {
     msgTxt += "Email: " + postBody.email + "\n";
     msgHtml += "<strong>Email</strong>: " + postBody.email + "<br/><br/>";
+    SAMPLE_FROM_EMAIL = postBody.email;
   }
 
   if (postBody.phone) {
